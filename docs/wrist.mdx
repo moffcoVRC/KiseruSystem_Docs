@@ -1,0 +1,76 @@
+---
+title: 煙管を持つ手首のひねりを調整する
+description: 手首補正を任意で追加し、手元と袖を見ながら前腕に分けるひねりの量を調整します。
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import EditorStep from '@site/src/components/EditorStep';
+
+# 煙管を持つ手首のひねりを調整する
+
+煙管の持ち位置は気に入っていて、手の甲をもう少し返したい。そんなときに使う任意の機能です。普段どおりの持ち方でよければ、手首補正はOFFのまま導入できます。煙管だけを傾けたい場合は、[パーツ配置の回転](./editor-guide.mdx#turn)を使います。
+
+## 1. 煙管を持つ側の手を選ぶ {#setup}
+
+<EditorStep folder="shinano-wrist" shot="off" alt="手の編集画面にある手首補正の場所" marks={[[6,558,184,32],[1051,106,279,26],[1054,361,273,42]]}>
+  <li>配置セットアップ左側の <strong>持ち方・手の形を作る</strong> を開きます。</li>
+  <li>右上の <strong>用途</strong> を <strong>煙管を持つ</strong> にします。「編集中」が自分の持ち手になっているか確認します。補正角は左右別々に設定できます。</li>
+  <li>右欄の <strong>手首の補正</strong> で <strong>煙管を持つ間だけ手首の向きを補正する</strong> にチェックを入れます。すると角度のスライダーが現れます。</li>
+</EditorStep>
+
+## 2. 親指と火皿を見ながら「ひねり」を動かす {#compare}
+
+まず「曲げ」「傾け」をそのままにして、**ひねり (°)** だけを少しずつ動かします。親指の向きと火皿の傾きが一緒に変わるのを見ながら、好みの持ち方を探してください。
+
+下の3枚は、同じアバターの指の形と煙管の持ち位置をそろえ、同じ視点から撮影したUnityプレビューです。違いを見やすくするため、作例では「曲げ」「傾け」を0°、補正ONのひねりを **+40°** にしています。自分のアバターでは扱いやすい角度を選んでください。
+
+<Tabs>
+<TabItem value="off" label="補正OFF">
+  <figure>
+    <a href={useBaseUrl('/img/shinano-wrist/off.webp')}><img src={useBaseUrl('/img/shinano-wrist/off-arm.webp')} width="479" height="495" alt="手首補正OFF。親指が煙管の軸に重なり、火皿は画面右下を向く。" /></a>
+  <figcaption>基準の持ち方です。親指と軸が重なる位置、袖口からのぞく手の甲を見てください。</figcaption>
+  </figure>
+</TabItem>
+<TabItem value="wrist" label="手首だけ">
+  <figure>
+    <a href={useBaseUrl('/img/shinano-wrist/wrist.webp')}><img src={useBaseUrl('/img/shinano-wrist/wrist-arm.webp')} width="479" height="495" alt="手首補正ON、前腕分散OFF。親指が横を向き、煙管の軸は前の画像より縦に近い。" /></a>
+  <figcaption>ひねりを+40°にした状態。手首の位置を保ちながら、手の甲と煙管が一緒に向きを変えます。</figcaption>
+  </figure>
+</TabItem>
+<TabItem value="forearm" label="前腕へ50％分散">
+  <figure>
+    <a href={useBaseUrl('/img/shinano-wrist/forearm.webp')}><img src={useBaseUrl('/img/shinano-wrist/forearm-arm.webp')} width="479" height="495" alt="ひねり+40°、前腕へ50％分散。同じ位置の親指と火皿の手前で、袖口から肘へ続くしわの向きが変わる。" /></a>
+  <figcaption>「手首だけ」と交互に見てください。親指と火皿は同じ位置・向きのまま、袖口から肘へ続くしわが変わります。この例では前腕に20°を配分しています。</figcaption>
+  </figure>
+</TabItem>
+</Tabs>
+
+## 3. 袖口のひねりを前腕にも分ける（任意） {#forearm}
+
+<EditorStep folder="shinano-wrist" shot="forearm" alt="手首補正を有効にした状態のひねりと分散量の設定欄" marks={[[1055,439,270,22],[1055,459,270,22],[1055,480,270,22]]}>
+  <li><strong>ひねり (°)</strong> で手の最終的な向きを決めます。</li>
+  <li>手首の境目にねじれが集中して見えたら、<strong>前腕へひねりを分散する</strong> をONにします。</li>
+  <li><strong>前腕への分散量 (%)</strong> は初期値50％です。0％は手首側だけ、100％はひねりの全量を前腕へ配分します。袖口に加えて肘の内側も見て、肘側のしわが気になったら割合を下げます。</li>
+</EditorStep>
+
+分散の対象は「ひねり」です。「ひねり」が0°のときは、分散量を動かしても見た目は変わりません。「曲げ」と「傾け」は手首側に残ります。
+
+## 4. 持ち方を保存してVRで比べる {#vr}
+
+<EditorStep folder="shinano-wrist" shot="save" alt="手の編集欄を下へスクロールし、持ち方を保存するボタンを表示した画面" marks={[[1051,563,278,44],[1114,773,232,47]]}>
+  <li>右欄を下へスクロールして <strong>持ち方を保存して所作に反映する</strong> を押し、持ち方の <strong>.asset</strong> を保存します。指の形、煙管の持ち位置・回転、手首補正が一組で保存されます。元の持ち方も残すなら別名を付けます。</li>
+  <li>右下の <strong>① 更新前の診断を確認 → ② このアバターの導入を更新</strong> を実行します。初回は <strong>① 導入前の診断を確認 → ② このアバターに新規導入</strong> です。その後、Sceneを保存し、VRChatへアップロードします。</li>
+</EditorStep>
+
+VRで煙管を手に持ち、コントローラーを同じ向きに保ったまま **Expression Menu → 煙管 → 手首補正** をOFF／ONにします。手の甲と煙管が一緒に返るか、鏡でも袖口や肘が自然に見えるかを比べてください。次に手を動かし、吸い口を無理なく口元へ運べるかも確かめます。
+
+VRのスイッチは手首補正と前腕分散を一緒に切り替えます。分散の割合を変えるときはUnityで調整して導入を更新してください。補正を導入した場合のスイッチは初期値ONで、前回のON／OFFは保存されません。
+
+### 反応しないとき・診断で止まったとき
+
+- **「手首の補正」が見つからない** — 用途を「煙管を持つ」に戻して、右欄をスクロールします。
+- **VRでONとOFFの差が分かりにくい** — 煙管を手に持ち、Unityで持ち手側のひねりが0°以外か確認します。切り替え時間は指の設定の2倍で、標準では約0.4秒です。
+- **前腕の補助ボーンが未対応と表示される** — 「前腕へひねりを分散する」をOFFにして再診断します。手首補正そのものが未対応と出る場合は、診断画面の「手首補正だけをOFFにして再診断」で、指の形と道具の配置を残して通常の導入へ進めます。
+- **同期パラメーターの空きが少ない** — 手首補正を導入すると、煙管の基本22 bitに1 bit加わり23 bitになります。前腕分散を加えても23 bitのままです。

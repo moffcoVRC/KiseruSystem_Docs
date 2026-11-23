@@ -1,0 +1,72 @@
+---
+title: 画面を見ながら導入する
+description: 配置セットアップの画面で、アバターの選択から煙管の移動・回転、指の調整、導入と保存までを順にたどります。
+---
+
+import EditorStep from '@site/src/components/EditorStep';
+
+# 画面を見ながら導入する
+
+アバターに右手持ちの煙管を導入する例です。[前提Asset](./getting-ready.md#1-必要な環境をそろえる)をそろえ、[製品本体をインポート](./getting-ready.md#import-product)します。Unityで **Tools → Mofcosmos → Kiseru → アバター配置セットアップ** を開きます。
+
+## 1. アバターを入れて診断する {#avatar}
+
+<EditorStep shot="choose" alt="アバターを選ぶ画面" marks={[[78,21,520,23]]}>
+  <li>ヒエラルキーからアバターを「対象アバター」欄にドラッグすると、診断が始まります。</li>
+</EditorStep>
+
+<EditorStep shot="diagnose" alt="アバターを指定した後の導入前診断" marks={[[490,797,370,45]]}>
+  <li>画面下の <strong>配置・導入画面へ進む</strong> を押します。</li>
+</EditorStep>
+
+## 2. 煙管を選び、手元に寄る {#layout}
+
+<EditorStep shot="fresh-review" alt="配置セットアップの全体と持ち位置の選択" marks={[[507,24,134,27],[7,150,179,31],[901,102,44,25]]}>
+  <li>上部で煙管を持つ手を選びます。</li>
+  <li>左の一覧で <strong>煙管の持ち位置</strong> を選びます。</li>
+  <li>プレビュー上部の <strong>選択</strong> を押すと、手元が拡大されます。</li>
+</EditorStep>
+
+## 3. 持つ位置を合わせる {#move}
+
+<EditorStep series="move" alt="移動ツールで煙管の位置を合わせる画面" marks={[[534,383,132,103]]} drag={[578,433,554,454]} afterMarks={[[508,402,132,103]]} result="図の移動量は約16 mmです。">
+  <li>プレビュー上部の <strong>移動</strong> を選び、色付きの矢印をドラッグして煙管を持ちたい位置に合わせます。</li>
+</EditorStep>
+
+## 4. 吸い口の向きを合わせる {#turn}
+
+<EditorStep series="turn" alt="回転ツールで煙管を傾ける画面" marks={[[506,297,210,224]]} drag={[546,323,590,309]} result="図では煙管を29度回しています。">
+  <li>プレビュー上部の <strong>回転</strong> を選び、色付きの輪をドラッグして吸い口の向きを合わせます。</li>
+</EditorStep>
+
+口元の煙管やほかの道具も、左の一覧から選んで同じように調整します。[パーツ別の配置例](./placement.md)
+
+## 5. 指を曲げて道具に添える（任意） {#fingers}
+
+元の手の形を使う場合は、[導入と保存](#finish)へ進みます。
+
+<EditorStep series="finger" alt="マッチ箱を持つ人差し指の編集画面" marks={[[5,589,184,32],[1051,147,280,27],[1140,416,95,23],[1051,474,283,29],[1054,730,273,42]]} drag={[1214,486,1167,486]} result="人差し指が曲がり、指先に付けたマッチ箱も傾きます。">
+  <li>左の <strong>持ち方・手の形を作る</strong> を開きます。</li>
+  <li><strong>用途</strong> で「マッチ箱を持つ」を選びます。</li>
+  <li><strong>人差し指</strong> を選びます。</li>
+  <li><strong>付け根の伸ばし</strong> を左に動かして、指を曲げます。</li>
+  <li><strong>編集した手の形を所作に反映する</strong> を押し、手の形を保存します。</li>
+</EditorStep>
+
+煙管の持ち方も保存する場合は、[手の形の編集手順](./hand-poses.md#編集して所作用に設定する)を参照してください。
+
+## 6. アバターへ反映してSceneを保存する {#finish}
+
+<EditorStep shot="fresh-review" alt="配置を終えて最終診断を開く画面" marks={[[972,789,167,50]]}>
+  <li>画面下の <strong>① 導入前の診断を確認</strong> を押します。</li>
+</EditorStep>
+
+<EditorStep shot="fresh-confirm" alt="初回の導入を確定する画面" marks={[[1113,790,234,48]]}>
+  <li>診断結果を確認し、右下の <strong>② このアバターに新規導入</strong> を押します。</li>
+</EditorStep>
+
+<EditorStep shot="installed" alt="アバターへの導入が完了した配置セットアップ画面" marks={[[119,4,224,22]]}>
+  <li>新規導入すると、ヒエラルキーのアバター直下に煙管一式の専用プレファブ（標準名「Kiseru」）が追加されます。左上に <strong>煙管システム 導入済み</strong> と出たら、Ctrl＋SでSceneを保存し、VRChatへアップロードします。</li>
+</EditorStep>
+
+[導入済みのアバターを更新する](./install.md#apply) ・ [手首のひねりを調整する（任意）](./wrist.mdx)
